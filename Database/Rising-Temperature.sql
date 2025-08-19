@@ -45,3 +45,4 @@ In 2015-01-02, the temperature was higher than the previous day (10 -> 25).
 In 2015-01-04, the temperature was higher than the previous day (20 -> 30).
 */
 
+SELECT W1.id FROM Weather AS W1 LEFT JOIN Weather AS W2 ON W1.recordDate=W2.recordDate + INTERVAL '1 day' WHERE W1.temperature>W2.temperature;
