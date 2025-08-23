@@ -49,6 +49,7 @@ Output:
 +---------------------+
 */
 
+-- CTEs with Windows Function
 WITH rank_salary AS(
     SELECT salary,
     DENSE_RANK() OVER (ORDER BY salary DESC) as rank FROM Employee

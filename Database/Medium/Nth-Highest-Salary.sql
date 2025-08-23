@@ -92,40 +92,5 @@ $$;
 
 -- SELECT NthHighestSalary(2)
 
-CREATE OR REPLACE PROCEDURE transfer (sender INT, receiver INT, amount DECIMAL)
-
-language plpgsql
-
-as $$
-
-declare sender_balance DECIMAL;
-
-BEGIN
-
-    SELECT balance into sender_balance FROM accounts WHERE id=sender;
-
-    IF sender_balance < amount THEN
-
-        ROLLBACK;
-
-    END IF;
-
-    UPDATE accounts
-
-    SET balance=balance-amount
-
-    WHERE id=sender;
-
-    UPDATE accounts
-
-    SET balance=balance+amount
-
-    WHERE id=receiver;
-
-    COMMIT;
-
-END;
-
-$$;
 
 
