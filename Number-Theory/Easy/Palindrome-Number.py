@@ -6,4 +6,9 @@ class Solution:
             return True
         else:
             return str(x) == str(x)[::-1]
+    
+if __name__ == "__main__":
+    solution = Solution()
+    inputInteger = int(input().strip())
+    print(solution.isPalindrome(inputInteger))
         
